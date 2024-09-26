@@ -79,4 +79,6 @@ python ConcatenatedAlignment.py output_file_blocks.tsv families_core.txt my_spec
 **my_species_folder** is the folder in which you have your genome files. This is were your core gene alignments will be stored during the previous step.    
 **individual_alignments_output_folder** is the folder in which you want your output concatenated alignment.     
 
+----------
+
 ### Note that the code provided requires multiple python libraries: subprocess, shlex, collections, Biopython SeqIO, and shutil. 
