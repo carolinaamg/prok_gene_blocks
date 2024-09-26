@@ -6,6 +6,8 @@ and Archaea"** by Carolina A. Martinez-Gutierrez and Louis-Marie Bobay. Note tha
 
 The authors are working on getting the code developed neat and tidy to be more user fiendly than what it currently is 😀   
 
+----------
+
 ➡️ Example of how to run *Prodigal*:  
 ⁉️ *Prodigal* information:   
 Manuscript for citation: https://link.springer.com/article/10.1186/1471-2105-11-119  
@@ -17,6 +19,8 @@ python RunProdigal.py my_species_folder
 ```
 **my_species_folder** is the folder in which your assembled genomes are **(with the extension .fna)**. Output files will go there too.    
 You will get two output files for each assembly: .genes.fna will have predicted genes with nucleotide sequences and .faa will have predicted genes with amino acid sequences.
+
+----------
 
 ➡️ Example of how to run *Corecruncher*:  
 
@@ -31,6 +35,8 @@ python corecruncher_master.py -ext .faa -freq 90 -score 80 -in  my_species_folde
 **-score**: is the minimum score of a given core gene to be considered.   
 **my_species_core_genome** will have your output core genome!  
 
+----------
+
 Now, let's get your blocks of core genes identified...
 Note that this code will do a pairwise analysis, meaning that it will compare everything vs everything to identify your blocks of core genes. 
 
@@ -42,6 +48,8 @@ python FindBlocksProk.py families_core.txt my_species_folder output_file_blocks.
 **families_core.txt** is the ouuput file of *Corecruncher* and it relates each protein to a family.   
 **my_species_folder** is the folder in which you have your genome files. Make sure you also have the assembly files in it!    
 **output_file_blocks.tsv** will contain all the information of the blocks identified.     
+
+----------
 
 If you would like to build a core genome alignment to make a phylogenomic tree and ask questions regarding the evolution of your blocks, *we got you covered*!    
 
@@ -55,8 +63,12 @@ python CoreGeneAlignments.py output_file_blocks.tsv families_core.txt my_species
 **my_species_folder** is the folder in which you have your genome files. This is were your core gene alignments will be stored.    
 
 ⁉️ CoreGeneAlignments will use MAFFT to align sequences (make sure you have it on your path!).   
-Publication here: https://academic.oup.com/nar/article/33/2/511/2549118    
+Publication here: https://academic.oup.com/nar/article/33/2/511/2549118
 
+----------
+
+Next step is to concatenate all your core gene alignments.
+    
 ➡️ Run the code ConcatenatedAlignment.py as follows:   
 
 ```
